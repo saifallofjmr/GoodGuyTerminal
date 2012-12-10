@@ -134,6 +134,7 @@ namespace GG_TerminalOverlay
         WebSession Session;
 
         string TerminalUrl = "http://gggamers.org/terminal/";
+        string ImgurUrl = "http://imgur.com/";
 
 
         public Form1()
@@ -532,6 +533,11 @@ namespace GG_TerminalOverlay
         private void toolStripButton5_Click(object sender, EventArgs e)
         {
             toolStripButton5.Checked = toolStripButton5.Checked ? false : true;
+        }
+
+        private void toolStripButton6_Click(object sender, EventArgs e)
+        {
+            webControl1.LoadURL(new Uri(ImgurUrl));
         }
     }
 }
