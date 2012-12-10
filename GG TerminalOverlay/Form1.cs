@@ -135,7 +135,6 @@ namespace GG_TerminalOverlay
 
         string TerminalUrl = "http://gggamers.org/terminal/";
 
-
         public Form1()
         {
             InitializeComponent();
@@ -532,6 +531,11 @@ namespace GG_TerminalOverlay
         private void toolStripButton5_Click(object sender, EventArgs e)
         {
             toolStripButton5.Checked = toolStripButton5.Checked ? false : true;
+        }
+
+        private void toolStripProgressBar1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
