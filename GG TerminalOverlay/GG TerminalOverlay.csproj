@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3321D936-6188-43DC-B4A9-EC001E2F4D6E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GG_TerminalOverlay</RootNamespace>
+    <AssemblyName>GG TerminalOverlay</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>gg_32.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="antlr.runtime, Version=2.7.6.2, Culture=neutral, PublicKeyToken=65e474d141e25e07, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\antlr.runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Awesomium.Core, Version=1.6.6.0, Culture=neutral, PublicKeyToken=e1a0d7c8071a5214, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\Awesomium.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Awesomium.Windows.Controls, Version=1.6.6.0, Culture=neutral, PublicKeyToken=7a34e179b8b61c39, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\Awesomium.Windows.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Awesomium.Windows.Controls.Design, Version=1.6.6.0, Culture=neutral, PublicKeyToken=5cd2bd3dad6c912e, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\Awesomium.Windows.Controls.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Awesomium.Windows.Forms, Version=1.6.6.0, Culture=neutral, PublicKeyToken=9bd24830fbe304a0, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\Awesomium.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="Db4objects.Db4o">
+      <HintPath>..\Dependencies\db4o\Db4objects.Db4o.dll</HintPath>
+    </Reference>
+    <Reference Include="Db4objects.Db4o.Linq">
+      <HintPath>..\Dependencies\db4o\Db4objects.Db4o.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\Dependencies\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Reflection">
+      <HintPath>..\Dependencies\db4o\Mono.Reflection.dll</HintPath>
+    </Reference>
+    <Reference Include="NotMissing">
+      <HintPath>..\Dependencies\NotMissing.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GgPlayer.cs" />
+    <Compile Include="KeyboardHook.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FluorineFx\FluorineFx-3.5.csproj">
+      <Project>{A9B8375B-579D-4F8A-B00C-F2828DB58F3A}</Project>
+      <Name>FluorineFx-3.5</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LoLNotes\LoLNotes.csproj">
+      <Project>{E5AB8F67-7BBC-48DF-9A1D-8D0D3DE685DD}</Project>
+      <Name>LoLNotes</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AutoItX3Lib">
+      <Guid>{F8937E53-D444-4E71-9275-35B64210CC3B}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="gg_32.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

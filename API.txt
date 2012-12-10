@@ -1,0 +1,64 @@
+###################################################################
+
+ GG Terminal API Draft
+ v0.1
+ 11/5/2012
+
+###################################################################
+
+ * Notes *
+Auto completing with tab -> http://stackoverflow.com/questions/46346/net-console-application-tab-completion
+		         -> http://skedit.googlecode.com/svn/trunk/skedit/SerialCommander/
+
+	On init, add each command to AutoComplete library
+	When receiving list of users, add each name to AutoComplete dictionary
+	When removing list of users, delete each name from AutoComplete dictionary
+	
+use Twisted + txpostgres
+
+
+
+
+
+
+
+ * In order of importance *
+
+
+auth <api key>
+	Saves key so you dont have to put it in again
+	Only 1 conn per key.  
+		If someone tries to connect to connected key
+			disconnect current connection
+			establish new connection
+
++ <name>
+	+1 karma for <name>
+
+- <name>
+	-1 karma for <name>
+
+
++r | +role [top | mid | jungle | support | adc | everything] (just the first letter (t|m|j|s|a|e) also works)
+-r | -role [top | mid | jungle | support | adc | everything]
+	Saves serverside the roles you prefer to play 
+
+	** You should also be able to say "all" **
+
+	The following require +role to have at least 1 role
+
+	duo [--min-elo = n --max-elo = n --min-karma = n --max-karma = n]
+		Returns a potential duo partner
+		Default min/max elo/karma is +-50 of your current standing
+
+
+
+	lfg [--min-elo = n --max-elo = n --min-karma = n --max-karma = n]
+		Returns a potential group of 5 with all roles filled
+		Default min/max elo/karma is +-50 of your current standing
+
+follow <name>
+	Starts following that player on GG Gamers -- how can this work if they are/aren't registered?
+
+scrim <your team name> --min-elo = n --max-elo = n
+	Finds another team looking to scrim, requires team name so we can grab Elo
